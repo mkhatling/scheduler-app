@@ -31,16 +31,18 @@ console.log(futureTime);
 colorDisplay();
 
 //function to save to local storage when save button is clicked
-//need to generate buttons
-
-let saveButton = document.createElement('button');
-saveButton.innerHTML = "save";
-saveButton.name = "saveBtn";
-document.td.appendChild(saveButton);
-
-console.log(saveButton);
-
-// function saveBtnHandler () {
 
 
-// }
+function savedItems() {
+    let saveButton = $(".saveBtn");
+    saveButton.addEventListener("click");
+    localStorage.setItem("text", "");
+    console.log(localStorage);
+    document.getElementById("saved-text").innerHTML = localStorage.getItem("text");
+    console.log(savedItems);
+    return savedItems()
+}
+// saveButton.addEventListener("click", function(){
+//     localStorage.setItem("text", "");
+//     document.getElementById("saved-text").innerHTML = localStorage.getItem("text");
+// })
