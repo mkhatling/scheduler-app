@@ -32,16 +32,24 @@ colorDisplay();
 
 //function to save to local storage when save button is clicked
 
+let saveButton = document.getElementById("saveBtn");
 
-function savedItems() {
-    let saveButton = $(".saveBtn");
-    saveButton.addEventListener("click");
-    localStorage.setItem("text", "");
-    console.log(localStorage);
-    document.getElementById("saved-text").innerHTML = localStorage.getItem("text");
-    console.log(savedItems);
-    return savedItems()
-}
+saveButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    
+    
+})
+
+// function savedItems(event) {
+//     event.preventDefault();
+//     let saveButton = $(".saveBtn");
+//     saveButton.addEventListener("click");
+//     localStorage.setItem("text", "");
+//     console.log(localStorage);
+//     document.getElementById("saved-text").innerHTML = localStorage.getItem("text");
+//     console.log(savedItems);
+//     return savedItems()
+// }
 // saveButton.addEventListener("click", function(){
 //     localStorage.setItem("text", "");
 //     document.getElementById("saved-text").innerHTML = localStorage.getItem("text");
