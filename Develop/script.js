@@ -14,31 +14,31 @@ displayTime();
     //gray for past, red for current, green for future
 function colorDisplay () {
 //variable can be used for present time using class present
-let time = DateTime.now();
-//variable for past time using class past
-let pastTime = DateTime.now().minus({hours: 1 }).toObject();
-//variable for future time using class future
-let futureTime = DateTime.now().plus({ hours: 1 }).toObject();
-
-if (time === true){
-    $("textarea").css(".present");
-} 
+let time = DateTime.now().hour;
 console.log(time);
-console.log(pastTime);
-console.log(futureTime);
+$(".time-block").each(function() {
+    let timeRow = parseInt($(this).attr("id").split(""));
+    console.log(timeRow);
+    if (timeRow < time) {
+        $(".time-block").addClass("past");
+    } else if (timeRow === time) {
+        $(".time-block").addClass("present");
+    } else {
+        $(".time-block").addClass("future");
+    }
+})
 }
-
 colorDisplay();
 
 //function to save to local storage when save button is clicked
 
-let saveButton = document.getElementById("saveBtn");
+// let saveButton = document.getElementById("saveBtn");
 
-saveButton.addEventListener("click", function(event) {
-    event.preventDefault();
+// saveButton.addEventListener("click", function(event) {
+//     event.preventDefault();
+
     
-    
-})
+// })
 
 // function savedItems(event) {
 //     event.preventDefault();
